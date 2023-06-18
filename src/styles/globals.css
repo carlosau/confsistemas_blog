@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 5px
+}
+
+.filter-slider {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: gray gray;
+}
+
+.filter-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.filter-slider::-webkit-scrollbar-thumb {
+  background-color: gray;
+}

@@ -1,0 +1,28 @@
+import React from 'react'
+import { Inter } from 'next/font/google'
+import Link from 'next/link'
+import articlesData from '../data/articles.json'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export default function Home() {
+  return (
+    <div className="container mx-auto py-10">
+    <h1 className="text-3xl font-bold m-3 text-center">Confsistemas blog</h1>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {articlesData.articles.map((article) => (
+        <div key={article.id} className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-bold mb-2">{article.title}</h2>
+          <p className="text-gray-600 mb-4">{article.content}</p>
+          <p className="text-gray-500 text-sm">
+            <span className="font-bold">Author:</span> {article.author}
+          </p>
+          <p className="text-gray-500 text-sm">
+            <span className="font-bold">Date:</span> {article.date}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+}

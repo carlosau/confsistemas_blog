@@ -1,0 +1,25 @@
+import React from 'react'
+import { Inter } from 'next/font/google'
+import Link from 'next/link'
+import articles from '../data/articles.json'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export default function Home() {
+  return (
+    <main>
+      <div>
+      <h1 className="text-2xl font-bold mb-4">Technology Blog</h1>
+      <ul className="space-y-2">
+        {articles.articles.map(article => (
+          <li key={article.id}>
+            <Link href={`./articles/${article.id}`}>
+              <p className="text-blue-500">{article.title}</p>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+    </main>
+  );
+};
